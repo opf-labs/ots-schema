@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hulDrsAdmin:hulDrsAdmin xmlns:hulDrsAdmin="http://hul.harvard.edu/ois/xml/ns/hulDrsAdmin" xmlns:fits="http://hul.harvard.edu/ois/xml/ns/fits/fits_output" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hul.harvard.edu/ois/xml/ns/hulDrsAdmin
+http://hul.harvard.edu/ois/xml/xsd/drs/hulDrsAdmin.xsd http://hul.harvard.edu/ois/xml/ns/fits/fits_output http://hul.harvard.edu/ois/xml/xsd/fits/fits_output.xsd ">
+	<hulDrsAdmin:drsObject>
+		<hulDrsAdmin:accessFlag status="current" createDate="2006-05-04T18:13:51.0Z" creatingAgent="me">R</hulDrsAdmin:accessFlag>
+		<hulDrsAdmin:accessFlag status="superseded" creatingAgent="me" modDate="2006-05-04T18:13:51.0Z" createDate="2006-05-04T18:13:51.0Z">R</hulDrsAdmin:accessFlag>
+		<hulDrsAdmin:adminCategory>
+			<hulDrsAdmin:adminCategoryID>id</hulDrsAdmin:adminCategoryID>
+			<hulDrsAdmin:adminCategoryName>name</hulDrsAdmin:adminCategoryName>
+			<hulDrsAdmin:adminCategoryDescription>desc</hulDrsAdmin:adminCategoryDescription>
+		</hulDrsAdmin:adminCategory>
+		<hulDrsAdmin:adminCategory>
+			<hulDrsAdmin:adminCategoryID>id</hulDrsAdmin:adminCategoryID>
+			<hulDrsAdmin:adminCategoryName>name</hulDrsAdmin:adminCategoryName>
+			<hulDrsAdmin:adminCategoryDescription>desc</hulDrsAdmin:adminCategoryDescription>
+		</hulDrsAdmin:adminCategory>
+	<hulDrsAdmin:adminFlag  status="current" createDate="2006-05-04T18:13:51.0Z">
+		<hulDrsAdmin:flagType>CORRUPTED</hulDrsAdmin:flagType>
+		<hulDrsAdmin:flagNote>idk</hulDrsAdmin:flagNote>
+	</hulDrsAdmin:adminFlag>
+	<hulDrsAdmin:adminFlag status="superseded" creatingAgent="me"  modDate="2006-05-04T18:13:51.0Z" createDate="2006-05-04T18:13:51.0Z">		
+		<hulDrsAdmin:flagType>CORRUPTED</hulDrsAdmin:flagType>		
+		<hulDrsAdmin:flagNote>another idk</hulDrsAdmin:flagNote>		
+	</hulDrsAdmin:adminFlag>
+		<hulDrsAdmin:billingCode status="current" createDate="2007-08-24T18:13:51.0Z" creatingAgent="creatingAgent0">billingCode0</hulDrsAdmin:billingCode>
+		<hulDrsAdmin:billingCode status="superseded" createDate="2006-05-04T18:13:51.0Z" creatingAgent="creatingAgent1" modDate="2007-08-24T18:13:51.0Z" modAgent="modAgent3">billingCode1</hulDrsAdmin:billingCode>
+		<hulDrsAdmin:captionBehavior>off</hulDrsAdmin:captionBehavior>
+		<hulDrsAdmin:captionDefault>this is the caption</hulDrsAdmin:captionDefault>
+		<hulDrsAdmin:captionUnitName>HUL</hulDrsAdmin:captionUnitName>
+		<hulDrsAdmin:captionDescription>mine</hulDrsAdmin:captionDescription>
+		<hulDrsAdmin:contentModelID>CMID-4.0</hulDrsAdmin:contentModelID>
+		<hulDrsAdmin:insertionDate>2006-05-04T18:13:51.0Z</hulDrsAdmin:insertionDate>
+		<hulDrsAdmin:latestModificationDate>2007-08-24T18:13:51.0Z</hulDrsAdmin:latestModificationDate>
+		<hulDrsAdmin:methodology>something</hulDrsAdmin:methodology>
+		<hulDrsAdmin:ownerCode status="current" createDate="2007-08-24T18:13:51.0Z" creatingAgent="creatingAgent0">FHCL.COLL</hulDrsAdmin:ownerCode>
+		<hulDrsAdmin:ownerCode status="superseded" createDate="2006-05-04T18:13:51.0Z" modDate="2007-08-24T18:13:51.0Z" modAgent="modAgent3">FHCL.LITT </hulDrsAdmin:ownerCode>
+		<hulDrsAdmin:ownerSuppliedName>AWM1500.2 </hulDrsAdmin:ownerSuppliedName>
+		<hulDrsAdmin:role>LICENSE</hulDrsAdmin:role>
+		<hulDrsAdmin:Status>current</hulDrsAdmin:Status>
+		<hulDrsAdmin:URI>
+			<hulDrsAdmin:uriType>PDS</hulDrsAdmin:uriType>
+			<hulDrsAdmin:uriValue>urn-3:blah:blah</hulDrsAdmin:uriValue>
+		</hulDrsAdmin:URI>
+	</hulDrsAdmin:drsObject>
+</hulDrsAdmin:hulDrsAdmin>

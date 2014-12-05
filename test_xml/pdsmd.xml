@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pds xmlns="http://hul.harvard.edu/ois/xml/ns/pds" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hul.harvard.edu/ois/xml/ns/pds http://hul.harvard.edu/ois/xml/xsd/pds/pds.xsd">
+<!-- xs:gYear xs:gYearMonth xs:date -->
+<!-- yyyy-mm-dd, yyyy-mm, and yyyy -->
+	<date> 
+		<fromDate>2007-08-24</fromDate> 
+		<toDate>2009</toDate> 
+	</date> 
+	<function status="false">goto</function>
+	<function status="false">viewocr</function>
+	<header>blah</header> 
+</pds>

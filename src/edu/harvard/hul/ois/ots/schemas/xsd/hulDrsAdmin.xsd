@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://hul.harvard.edu/ois/xml/ns/hulDrsAdmin"
+    xmlns="http://hul.harvard.edu/ois/xml/ns/hulDrsAdmin"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:fits="http://hul.harvard.edu/ois/xml/ns/fits/fits_output"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:SchemaLocation="http://hul.harvard.edu/ois/xml/ns/hulDrsAdmin http://hul.harvard.edu/ois/xml/xsd/drs/hulDrsAdmin.xsd http://hul.harvard.edu/ois/xml/ns/fits/fits_output http://hul.harvard.edu/ois/xml/xsd/fits/fits_output.xsd"
+    version="0.1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <!-- 2009-02-24  First draft. (RKW) -->
+    <!-- 2009-04-16 Second draft (RKW) -->
+    <!-- 2009-05-29:  Revised to add isFirstGenerationInDrs and isPreferredDeliverableSource, plus other cleanup and reorg.  
+    Elaborated accessFlag with complexType and named simpleType. Will need to do this for other elements with both enumerated values and attributes. (RKW)-->
+    <!-- 2009-08-05: Added uriType and uriValue subelements to URI element.  Added a fileIndentification element bounded to the fits namespace for the identification block from fits. Added xs:dateType to the various date elements. Pulled drsObject and drsFile up to top level to simplify testing.
+    (RKW) -->
+    <!-- 2009-08-06: Added "B" to accessFlag values. Added boolean types to isFirstGenerationInDrs and isPreferredDeliverableSource. -->
+    <!-- 2009-08-12: Added adminCategory as complex element including adminCategoryID plus new optional elements adminCategoryName and adminCategoryDescription (RKW) -->
+    <!-- 2009-08-13: Removed flagAgent and flagDate (redundant with versioning attributes).  Changed isFirstGenerationInDrs and isPreferredDeliverableSource from Boolean to xs:string with enumerated values.  Enumerated values for contentModelID, quality,  role (RKW)-->
+    <!-- 2009-09-10: Added element "Status" to apply to object or file. -->
+     <!-- 2010-02-12: Added formatValidation (fits:fileStatusType) (SM)-->
+    <!-- 2010-03-24: Moved existing role from an independent element ref'ed by drsFile to being defined directly under drsFile;  added new role defined directly under drsObject; specified different lists of enumerated values under each; changed role value "SCRIPT" to "CODE" (RKW)-->
+    <!-- 2010-04-28: Changed drsObject role to be optional (RKW)--> 
+    <!-- 2010-05-05: added drsURN to drsObject; changed URI to be repeatable. (RKW) -->
+    <!-- 2010-05-13: removed drnURN; added methodology (RKW) -->
+    <!-- 2010-07-10: Added a file level LICENSE role; removed the file level WORLD_FILE role; added an object level WORLD_LOCATION role (SM)    -->
+    <xs:import namespace="http://hul.harvard.edu/ois/xml/ns/fits/fits_output"
+        schemaLocation="http://hul.harvard.edu/ois/xml/xsd/fits/fits_output.xsd"/>
+    <xs:element name="hulDrsAdmin">
+        <xs:complexType>
+            <xs:choice>
+                <xs:element ref="drsObject"/>
+                <xs:element ref="drsFile"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="drsObject">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="accessFlag" maxOccurs="unbounded"/>
+                <xs:element ref="adminCategory" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="adminFlag" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="billingCode" maxOccurs="unbounded"/>
+                <xs:element ref="captionBehavior"/>
+                <xs:element ref="captionDefault" minOccurs="0"/>
+                <xs:element ref="captionUnitName" minOccurs="0"/>
+                <xs:element ref="captionDescription" minOccurs="0"/>
+                <xs:element ref="contentModelID"/>
+                <xs:element ref="insertionDate"/>
+                <xs:element ref="latestModificationDate" minOccurs="0"/>
+                <xs:element ref="methodology" minOccurs="0"/>
+                <xs:element ref="ownerCode" maxOccurs="unbounded"/>
+                <xs:element ref="ownerSuppliedName"/>
+                <xs:element name="role" minOccurs="0" maxOccurs="unbounded">
+                   <xs:annotation>
+                    <xs:documentation/>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="COLOR_PROFILE">
+                                <xs:annotation>
+                                    <xs:documentation></xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                            <xs:enumeration value="DOCUMENTATION">
+                                <xs:annotation>
+                                    <xs:documentation></xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                            <xs:enumeration value="DONOR_AGREEMENT">
+                                <xs:annotation>
+                                    <xs:documentation></xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                            <xs:enumeration value="FINDING_AID">
+                                <xs:annotation>
+                                    <xs:documentation></xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                            <xs:enumeration value="LICENSE">
+                                <xs:annotation>
+                                    <xs:documentation></xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                            <xs:enumeration value="SCHEMA">
+                                <xs:annotation>
+                                    <xs:documentation></xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                            <xs:enumeration value="CODE">
+					             <xs:annotation>
+					                 <xs:documentation></xs:documentation>
+					             </xs:annotation>
+                            </xs:enumeration>
+                            <xs:enumeration value="WORLD_LOCATION">
+			                    <xs:annotation>
+			                        <xs:documentation>A plain text computer data file used by geographic information systems  to georeference raster map images.</xs:documentation>
+			                    </xs:annotation>
+			                </xs:enumeration>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element ref="Status"/>
+                <xs:element ref="URI" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="drsFile">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="accessFlag" maxOccurs="unbounded"/>
+                <xs:element ref="adminCategory" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="adminFlag" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="fileIdentification" type="fits:identificationType" minOccurs="0"
+                    maxOccurs="1"/>
+                <xs:element name="formatValidation" type="fits:fileStatusType" minOccurs="0"
+                    maxOccurs="1"/>
+                <xs:element ref="insertionDate"/>
+                <xs:element ref="isFirstGenerationInDrs"/>
+                <xs:element ref="isPreferredDeliverableSource" minOccurs="0"/>
+                <xs:element ref="latestModificationDate" minOccurs="0"/>
+                <xs:element ref="methodology" minOccurs="0"/>
+                <xs:element ref="ownerSuppliedName" minOccurs="0"/>
+                <xs:element ref="processing" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="quality" minOccurs="0"/>
+                <xs:element ref="role" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="Status"/>
+                <xs:element ref="suppliedFilename"/>
+                <xs:element ref="suppliedDirectory"/>
+                <xs:element ref="URI" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="usageClass"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="accessFlag">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="accessFlagType">
+                    <xs:attributeGroup ref="Versioning"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="accessFlagType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="N"/>
+            <xs:enumeration value="P"/>
+            <xs:enumeration value="R"/>
+            <xs:enumeration value="B"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="adminCategory">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="adminCategoryID" type="xs:string">
+                    <xs:annotation>
+                        <xs:documentation>Identifier for an administrative category as defined in
+                            the DRS. Categories must have been previously defined through HUL DRS
+                            Web Admin before a category canbe assinged to an object or
+                        file.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="adminCategoryName" type="xs:string" minOccurs="0"/>
+                <xs:element name="adminCategoryDescription" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="adminFlag">
+        <xs:annotation>
+            <xs:documentation>The adminFlag complex element provides a way for DRS administrators to
+                identify and characterize objects and files that require action. As the name
+                implies, it is used to flag items for administrative action, and is not intended to
+                carry permanent object or file characteristics.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="flagType">
+                    <!-- Does this need an enumerated list of types? To be handled by Word Shack. Should we change this element to  carry a WS ID,or add a new element for the WS ID? -->
+                    <xs:annotation>
+                        <xs:documentation/>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="flagNote">
+                    <xs:annotation>
+                        <xs:documentation/>
+                    </xs:annotation>
+                </xs:element>
+                </xs:sequence>
+            <xs:attributeGroup ref="Versioning"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="billingCode" type="versionedType">
+        <xs:annotation>
+            <xs:documentation/>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="contentModelID">
+        <xs:annotation>
+            <xs:documentation/>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="CMID-1.0">
+                    <xs:annotation><xs:documentation>Opaque. This content model represents an object containing one or more files in any format.</xs:documentation> </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="CMID-2.0">
+                    <xs:annotation><xs:documentation>Audio. This content model represents sound works in digital form.</xs:documentation></xs:annotation>
+                </xs:enumeration>
+				<xs:enumeration value="CMID-2.1">
+                    <xs:annotation><xs:documentation>Audio (simple). This content model represents sound works in digital form.</xs:documentation></xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="CMID-3.0">
+                    <xs:annotation><xs:documentation>Web Harvest.  This content model represents the web harvest object deposited into the DRS by the HUL Web Archiving Collection Service (WAX).</xs:documentation></xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="CMID-4.0">
+                    <xs:annotation>
+                        <xs:documentation>PDS Document. This content model represents a page-based object delivered by HUL's Page Delivery Service (PDS). </xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="CMID-4.1">
+                    <xs:annotation>
+                        <xs:documentation>Document. This content model represents a page-based object delivered by HUL's File Delivery Service (FDS).</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="CMID-4.2">
+                    <xs:annotation>
+                        <xs:documentation>Dark PDS Document.  This content model represents a page-based object that could be delivered by HUL's Page Delivery Service (PDS) if the object were brightened. </xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="CMID-4.3">
+                    <xs:annotation>
+                        <xs:documentation>Dark Google Document 1, Google 0.1 Container. This content model represents a page-based object created as part of the Google scanning project that could be delivered by HUL's Page Delivery Service (PDS) if the object were brightened. </xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="CMID-4.4">
+                    <xs:annotation>
+                        <xs:documentation>Dark Google Document 2, Google 1.0 Container. : This content model represents a page-based object created as part of the Google scanning project that could be delivered by HUL's Page Delivery Service (PDS) if the object were brightened. </xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="CMID-4.5">
+                    <xs:annotation>
+                        <xs:documentation>MOA2 Document . This content model describes the MOA2 structural descriptor file used by PDS page-turned objects that were deposited into the DRS prior to 200?. </xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="CMID-4.6">
+                    <xs:annotation>
+                        <xs:documentation>Dark Google Document 3, Google 1.1 container.  This content model represents a page-based object created as part of the Google scanning project that could be delivered by HUL's Page Delivery Service (PDS) if the object were brightened. </xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="CMID-5.0">
+                    <xs:annotation>
+                        <xs:documentation>Still Image. This content model represents visual works in digital form. Each object represents a single image (photograph, map, etc.).</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="CMID-5.1">
+                    <xs:annotation>
+                        <xs:documentation>Biomedical Image</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="CMID-5.2">
+                    <xs:annotation>
+                        <xs:documentation>Target Image. This content model represents an external target image for one or more other images. </xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="CMID-6.0">
+                    <xs:annotation>
+                        <xs:documentation>Text.  This content model represents relatively simple text objects. </xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="CMID-7.0">
+                    <xs:annotation>
+                        <xs:documentation>Vector Still Image, Drawing. This content model represents illustrations and designs, that represent shapes by describing geometric properties in points, lines, curves, and polygons.</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="CMID-8.0">
+                    <xs:annotation>
+                        <xs:documentation>DRS Agent. This content model represents individuals, organizations or software applications associated with management interfaces, processes, events or otherwise related to DRS content.</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="captionBehavior">
+        <xs:annotation>
+            <xs:documentation/>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="off"/>
+                <xs:enumeration value="on"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="captionDefault">
+        <xs:annotation>
+            <xs:documentation/>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="captionUnitName">
+        <xs:annotation>
+            <xs:documentation/>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="captionDescription">
+        <xs:annotation>
+            <xs:documentation/>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="insertionDate" type="xs:dateTime">
+        <xs:annotation>
+            <xs:documentation/>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="isFirstGenerationInDrs">
+        <xs:annotation>
+            <xs:documentation/>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="yes"/>
+                <xs:enumeration value="no"/>
+                <xs:enumeration value="unspecified"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="isPreferredDeliverableSource">
+        <xs:annotation>
+            <xs:documentation/>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="yes"/>
+                <xs:enumeration value="no"/>
+                <xs:enumeration value="unspecified"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="latestModificationDate" type="xs:dateTime">
+        <xs:annotation>
+            <xs:documentation/>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="methodology" type="xs:string">
+        <xs:annotation>
+            <xs:documentation></xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="ownerCode" type="versionedType">
+        <xs:annotation>
+            <xs:documentation/>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="ownerSuppliedName">
+        <xs:annotation>
+            <xs:documentation/>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="processing">
+        <xs:annotation>
+            <xs:documentation/>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="quality">
+        <xs:annotation>
+            <xs:documentation/>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:integer">
+                <xs:enumeration value="1"/>
+                <xs:enumeration value="2"/>
+                <xs:enumeration value="3"/>
+                <xs:enumeration value="4"/>
+                <xs:enumeration value="5"/>
+                <xs:enumeration value="6"/>
+                <xs:enumeration value="7"/>
+                <xs:enumeration value="8"/>
+                <xs:enumeration value="9"/>
+                <xs:enumeration value="10"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="role">
+        <xs:annotation>
+            <xs:documentation/>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="ARCHIVAL_MASTER">
+                    <xs:annotation>
+                        <xs:documentation>A file intended to be maintained for the long term without loss of essential features.  Among a series of derivative files, the highest quality or closest to the original capture.</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="CONTAINER">
+                    <xs:annotation>
+                        <xs:documentation>A compressed archive file encapsulating multiple content files.</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="DELIVERABLE">
+                    <xs:annotation>
+                        <xs:documentation>A file intended to be provided to users, often reduced in size or quality from an archival master or production master. </xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="DOCUMENTATION">
+                    <xs:annotation>
+                        <xs:documentation></xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="LICENSE">
+                </xs:enumeration>
+                <xs:enumeration value="LOG">
+                    <xs:annotation>
+                        <xs:documentation>A file documenting a  web harvesting instance, in which each URI tried will get an entry in the crawl.log regardless of success or failure. [Do we want to generalize this?]</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="ORIGINAL_ORDER">
+                    <xs:annotation>
+                        <xs:documentation>A file that  lists related objects, in order, that were created because the original content exceeded 50 GB. </xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="OBJECT_DESCRIPTOR">
+                    <xs:annotation>
+                        <xs:documentation></xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="PAGE_COORDINATES">
+                    <xs:annotation>
+                        <xs:documentation>A file that defines the layout and segmentation of an original digitized page or object.  </xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="PAGE_IMAGE">
+                    <xs:annotation>
+                        <xs:documentation>An image of a printed or manuscript page.</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="PAGE_TEXT">
+                    <xs:annotation>
+                        <xs:documentation>A text file containing the textual content of a printed or manuscript page.</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="PRODUCTION_MASTER">
+                    <xs:annotation>
+                        <xs:documentation>A file produced by processing the content in one or more archival master files in order to optimize the content for further use.  Examples of such processing include technical or aesthetic corrections such as declicking an audio file or cropping an image. Deliverable files are often created from production masters rather than directly from archival masters.</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="STYLE_SHEET">
+                    <xs:annotation>
+                        <xs:documentation>A file defining the visual layout and/or presentation of content.</xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="TARGET_DESCRIPTION">
+                    <xs:annotation>
+                        <xs:documentation></xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="TARGET_IMAGE">
+                    <xs:annotation>
+                        <xs:documentation></xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+                <xs:enumeration value="THUMBNAIL">
+                    <xs:annotation>
+                        <xs:documentation></xs:documentation>
+                    </xs:annotation>
+                </xs:enumeration>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="Status">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="current"/>
+                <xs:enumeration value="superseded"/>
+                 <xs:enumeration value="deleted"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="suppliedFilename">
+        <xs:annotation>
+            <xs:documentation/>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="suppliedDirectory">
+        <xs:annotation>
+            <xs:documentation/>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="URI">
+        <xs:annotation>
+            <xs:documentation/>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="uriType" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="uriValue" minOccurs="1" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="usageClass">
+        <xs:annotation>
+            <xs:documentation/>
+        </xs:annotation>
+    </xs:element>
+    <xs:attributeGroup name="Versioning">
+        <xs:attribute name="status">
+            <xs:annotation>
+                <xs:documentation>An indication of whether the metadata element is current or has
+                    been superseded.</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="current"/>
+                    <xs:enumeration value="superseded"/>
+                    <xs:enumeration value="deleted"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="createDate" type="xs:dateTime" use="required">
+            <xs:annotation>
+                <xs:documentation>The date and time of creation of the metadata element.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="creatingAgent">
+            <xs:annotation>
+                <xs:documentation>The DRS authorized Agent (individual or program) that caused the
+                    metadata element to be created. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="modDate" type="xs:dateTime" use="optional">
+            <xs:annotation>
+                <xs:documentation>The date and time the metadata element was superseded or deleted.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="modAgent" use="optional">
+            <xs:annotation>
+                <xs:documentation>The DRS authorized Agent (individual or program) that caused the
+                    metadata element to be superseded or deleted. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:attributeGroup>
+    <xs:complexType name="versionedType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attributeGroup ref="Versioning"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+</xs:schema>

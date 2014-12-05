@@ -1,0 +1,164 @@
+<premis:object xsi:type="premis:file" xmlns:premis="info:lc/xmlns/premis-v2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:docMD="http://www.fcla.edu/docmd" xsi:schemaLocation="info:lc/xmlns/premis-v2
+http://www.loc.gov/standards/premis/premis.xsd http://www.fcla.edu/docmd http://www.fcla.edu/dls/md/docmd.xsd">
+	<premis:objectIdentifier>
+		<premis:objectIdentifierType>ident-type</premis:objectIdentifierType>
+		<premis:objectIdentifierValue>ident-value</premis:objectIdentifierValue>
+	</premis:objectIdentifier>
+	<premis:preservationLevel>
+		<premis:preservationLevelValue>4</premis:preservationLevelValue>
+		<premis:preservationLevelRole>4</premis:preservationLevelRole>
+		<premis:preservationLevelRationale>4</premis:preservationLevelRationale>
+		<premis:preservationLevelRationale>4</premis:preservationLevelRationale>
+	</premis:preservationLevel>
+
+<premis:significantProperties>
+	<premis:significantPropertiesType>5</premis:significantPropertiesType>
+	<premis:significantPropertiesValue>5</premis:significantPropertiesValue>
+	<premis:significantPropertiesExtension>
+		<randomXml>blah</randomXml>
+	</premis:significantPropertiesExtension>
+</premis:significantProperties>	
+	
+	<premis:objectCharacteristics>
+		<premis:compositionLevel>1</premis:compositionLevel>
+		<premis:fixity>
+			<premis:messageDigestAlgorithm>MD5</premis:messageDigestAlgorithm>
+			<premis:messageDigest>123</premis:messageDigest>
+			<premis:messageDigestOriginator>I don't know</premis:messageDigestOriginator>	
+		</premis:fixity>
+		<premis:size>123</premis:size>
+		<premis:format>
+			<premis:formatDesignation>
+				<premis:formatName>jpeg</premis:formatName>
+				<premis:formatVersion>2.1</premis:formatVersion>
+			</premis:formatDesignation>
+		</premis:format>
+		<premis:creatingApplication>
+			<premis:creatingApplicationName>fred</premis:creatingApplicationName>
+			<premis:creatingApplicationVersion>2.0</premis:creatingApplicationVersion>
+			<premis:dateCreatedByApplication>2006-05-04T18:13:51.0Z</premis:dateCreatedByApplication>
+			<premis:creatingApplicationExtension> </premis:creatingApplicationExtension>
+		</premis:creatingApplication>
+		<premis:inhibitors>
+			<premis:inhibitorType>password protection</premis:inhibitorType>
+			<premis:inhibitorTarget>all content</premis:inhibitorTarget>
+			<premis:inhibitorKey>fred</premis:inhibitorKey>
+		</premis:inhibitors>
+		<premis:objectCharacteristicsExtension>
+       <docMD:document>
+        <docMD:PageCount>3</docMD:PageCount>
+        <docMD:WordCount>34</docMD:WordCount>
+        <docMD:CharacterCount>4</docMD:CharacterCount>
+        <docMD:ParagraphCount>4</docMD:ParagraphCount>
+        <docMD:LineCount>66</docMD:LineCount>
+        <docMD:TableCount>0</docMD:TableCount>
+        <docMD:GraphicsCount>4</docMD:GraphicsCount>
+        <docMD:Language>234</docMD:Language>
+        <docMD:Language>blah</docMD:Language>
+        <docMD:Font FontName="BookmanOldStyle" isEmbedded="false"/>
+        <docMD:Font FontName="Arial,Bold" isEmbedded="false"/>
+        <docMD:Font FontName="TimesNewRoman,Italic" isEmbedded="false"/>
+        <docMD:Features>hasLayers</docMD:Features>
+        <docMD:Features>hasOutline</docMD:Features>
+      </docMD:document>
+		</premis:objectCharacteristicsExtension>
+	</premis:objectCharacteristics>
+	
+	<premis:storage>
+		<premis:contentLocation>
+			<premis:contentLocationType>physical</premis:contentLocationType>			
+			<premis:contentLocationValue>my desk</premis:contentLocationValue>				
+		</premis:contentLocation>	
+		<premis:storageMedium>desk</premis:storageMedium>
+	</premis:storage>
+
+<premis:environment>
+	<premis:environmentCharacteristic>6</premis:environmentCharacteristic>
+	<premis:environmentPurpose>6</premis:environmentPurpose>
+	<premis:environmentPurpose>6</premis:environmentPurpose>
+	<premis:environmentNote>6</premis:environmentNote>
+	<premis:environmentNote>another 6</premis:environmentNote>
+	<premis:dependency>
+		<premis:dependencyName>5</premis:dependencyName>
+	</premis:dependency>
+	<premis:dependency>
+		<premis:dependencyName>55</premis:dependencyName>
+		<premis:dependencyName>55</premis:dependencyName>
+		<premis:dependencyIdentifier>
+			<premis:dependencyIdentifierType>66</premis:dependencyIdentifierType>
+			<premis:dependencyIdentifierValue>66</premis:dependencyIdentifierValue>
+		</premis:dependencyIdentifier>
+		<premis:dependencyIdentifier>
+			<premis:dependencyIdentifierType>88</premis:dependencyIdentifierType>			
+			<premis:dependencyIdentifierValue>77</premis:dependencyIdentifierValue>
+		</premis:dependencyIdentifier>
+	</premis:dependency>
+	<premis:software>
+		<premis:swName>Snow Leopard</premis:swName>
+		<premis:swVersion>10.6</premis:swVersion>
+		<premis:swType>Operating System</premis:swType>
+		<premis:swOtherInformation>I don't know</premis:swOtherInformation>
+		<premis:swOtherInformation>more I don't know</premis:swOtherInformation>
+		<premis:swDependency>Intel CPU</premis:swDependency>
+	</premis:software>
+	<premis:hardware>
+		<premis:hwName>Intel</premis:hwName>
+		<premis:hwType>CPU</premis:hwType>
+		<premis:hwOtherInformation>Core 2 Duo</premis:hwOtherInformation>
+	</premis:hardware>
+</premis:environment>	
+	
+	<premis:signatureInformation>
+		<premis:signature>
+			<premis:signatureEncoding>7</premis:signatureEncoding>
+			<premis:signatureMethod>7</premis:signatureMethod>
+			<premis:signatureValue>7</premis:signatureValue>
+			<premis:signatureValidationRules>7</premis:signatureValidationRules>
+			<premis:signatureProperties>7</premis:signatureProperties>
+			<premis:signatureProperties>7</premis:signatureProperties>
+			<premis:keyInformation>
+				<moreRandomXml>blah2</moreRandomXml>
+			</premis:keyInformation>
+		</premis:signature>
+		<premis:signatureInformationExtension></premis:signatureInformationExtension>
+	</premis:signatureInformation>
+	
+<premis:relationship>
+	<premis:relationshipType>unknown</premis:relationshipType>
+	<premis:relationshipSubType>more uknown</premis:relationshipSubType>
+	<premis:relatedObjectIdentification>
+		<premis:relatedObjectIdentifierType>a file</premis:relatedObjectIdentifierType>
+		<premis:relatedObjectIdentifierValue>123</premis:relatedObjectIdentifierValue>
+		<premis:relatedObjectSequence>23</premis:relatedObjectSequence>
+	</premis:relatedObjectIdentification>
+	<premis:relatedObjectIdentification>
+		<premis:relatedObjectIdentifierType>another file</premis:relatedObjectIdentifierType>
+		<premis:relatedObjectIdentifierValue>456</premis:relatedObjectIdentifierValue>
+		<premis:relatedObjectSequence>45</premis:relatedObjectSequence>
+	</premis:relatedObjectIdentification>
+	<premis:relatedEventIdentification>
+		<premis:relatedEventIdentifierType>an event</premis:relatedEventIdentifierType>
+		<premis:relatedEventIdentifierValue>123</premis:relatedEventIdentifierValue>
+	</premis:relatedEventIdentification>
+	<premis:relatedEventIdentification>
+		<premis:relatedEventIdentifierType>another event</premis:relatedEventIdentifierType>
+		<premis:relatedEventIdentifierValue>456</premis:relatedEventIdentifierValue>
+	</premis:relatedEventIdentification>
+</premis:relationship>
+
+<premis:linkingEventIdentifier>
+	<premis:linkingEventIdentifierType>ingest</premis:linkingEventIdentifierType>
+	<premis:linkingEventIdentifierValue>123</premis:linkingEventIdentifierValue>
+</premis:linkingEventIdentifier>
+
+<premis:linkingIntellectualEntityIdentifier  >
+	<premis:linkingIntellectualEntityIdentifierType>something else</premis:linkingIntellectualEntityIdentifierType>
+	<premis:linkingIntellectualEntityIdentifierValue>123</premis:linkingIntellectualEntityIdentifierValue>
+</premis:linkingIntellectualEntityIdentifier>
+
+<premis:linkingRightsStatementIdentifier>
+	<premis:linkingRightsStatementIdentifierType>Some rights</premis:linkingRightsStatementIdentifierType>
+	<premis:linkingRightsStatementIdentifierValue>456</premis:linkingRightsStatementIdentifierValue>
+</premis:linkingRightsStatementIdentifier>
+
+</premis:object>

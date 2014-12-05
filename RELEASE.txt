@@ -1,0 +1,58 @@
+RELEASE NOTES
+-------------
+
+Version 0.11 (2/24/11)
+---------------------
+- Added FAILED_METADATA_EXTRACTION admin flag to HulDrsAdmin schema
+- Added support for repeated object roles
+
+Version 0.10 (2/4/11)
+---------------------
+- Fixed MODS typeOfResource bug.
+
+Version 0.9 (1/31/11)
+---------------------
+- Added restrictions to AdminFlag in HulDrsAdmin schema.  Only one of of a give
+  type can have status="current"
+
+Version 0.8 (12/15/10)
+---------------------
+- Added constants for controlled lists
+
+Version 0.7 (11/17/10)
+---------------------
+- Added HulDrsBatch metadata support
+
+Version 0.6 (8/2/10)
+---------------------
+- Updated hulDrsAdmin.xsd
+
+Version 0.5 (7/30/10)
+---------------------
+- Fixed bug in textMD:agent element output
+- Updated hulDrsAdmin.xsd
+- Fixed output of empty HulDrsAdmin formatValidation elements
+
+Version 0.4 (7/7/10)
+---------------------
+- Fixed <mods:partName> element name
+- Fixed <premis:signer> element name
+
+Version 0.3 (06/18/10)
+---------------------
+- Updated to latest docmd schema. makes <pagecount> optional
+- Fixed MIX orientation degree symbols
+
+Version 0.2 (06/11/10)
+---------------------
+- Many fixes to MIX and other schemas
+
+Version 0.2 (03/30/10)
+---------------------
+- Fixing PREMIS parser. ObjectFile and ObjectRepresentation were
+  checking for attributes while not at a START_ELEMENT
+
+Version 0.1 (03/05/10)
+----------------------
+- Initial release
+

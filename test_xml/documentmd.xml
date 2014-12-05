@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<document xmlns="http://www.fcla.edu/docmd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.fcla.edu/docmd http://www.fcla.edu/dls/md/docmd.xsd">
+	<PageCount>3</PageCount>
+	<WordCount>34</WordCount>
+	<CharacterCount>4</CharacterCount>
+	<ParagraphCount>4</ParagraphCount>
+	<LineCount>66</LineCount>
+	<TableCount>0</TableCount>
+	<GraphicsCount>4</GraphicsCount>
+	<Language>234</Language>
+	<Language>blah</Language>
+	<Font FontName="BookmanOldStyle" isEmbedded="false"/>
+	<Font FontName="Arial,Bold" isEmbedded="false"/>
+	<Font FontName="TimesNewRoman,Italic" isEmbedded="false"/>
+	<Features>hasLayers</Features>
+	<Features>hasOutline</Features>
+</document>

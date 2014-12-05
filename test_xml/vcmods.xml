@@ -1,0 +1,53 @@
+<MODS:mods xmlns:MODS="http://www.loc.gov/mods/v3">
+<MODS:titleInfo>
+<MODS:nonSort>The </MODS:nonSort>
+<MODS:title>murder of Isaac Jackson in Russell</MODS:title>
+<MODS:subTitle>Full and interesting particulars. The inquest and examination. Accurate portrait of Charles E. Jones, the murderer</MODS:subTitle>
+</MODS:titleInfo>
+<MODS:name type="personal">
+<MODS:namePart>Jones, Charles E.</MODS:namePart>
+<MODS:role>
+<MODS:roleTerm authority="marcrelator" type="text">creator</MODS:roleTerm>
+</MODS:role>
+</MODS:name>
+<MODS:typeOfResource>text</MODS:typeOfResource>
+<MODS:originInfo>
+<MODS:place>
+<MODS:placeTerm authority="marccountry" type="code">mau</MODS:placeTerm>
+</MODS:place>
+<MODS:place>
+<MODS:placeTerm type="text">Springfield (Mass.)</MODS:placeTerm>
+</MODS:place>
+<MODS:publisher>Springfield Daily Republican</MODS:publisher>
+<MODS:dateIssued>Tuesday, June 9, 1857</MODS:dateIssued>
+<MODS:dateOther keyDate="yes">1857</MODS:dateOther>
+<MODS:dateIssued encoding="marc">1857</MODS:dateIssued>
+<MODS:issuance>monographic</MODS:issuance>
+</MODS:originInfo>
+<MODS:language>
+<MODS:languageTerm authority="iso639-2b" type="code">eng</MODS:languageTerm>
+</MODS:language>
+<MODS:physicalDescription>
+<MODS:form authority="marcform">print</MODS:form>
+<MODS:extent>1 sheet ([2] p.) : ill. ; 56 x 38 cm (fol.)</MODS:extent>
+</MODS:physicalDescription>
+<MODS:note>The Springfield Daily Republican special issue for Tuesday, June 9, 1857.</MODS:note>
+<MODS:note>"We print this morning nearly seven thousand copies of the Republican the demand being so great for our first account of the murderer Jones and the accompanying account of the murder" : p. [2].</MODS:note>
+<MODS:subject authority="lcsh">
+<MODS:topic>Trials (Murder)</MODS:topic>
+<MODS:geographic>Massachusetts</MODS:geographic>
+<MODS:geographic>Russell</MODS:geographic>
+</MODS:subject>
+<MODS:location>
+<MODS:physicalLocation>Law School</MODS:physicalLocation>
+</MODS:location>
+<MODS:recordInfo>
+<MODS:recordContentSource authority="marcorg">HVL</MODS:recordContentSource>
+<MODS:recordCreationDate encoding="marc">940613</MODS:recordCreationDate>
+<MODS:recordChangeDate encoding="iso8601">20070406170822.0</MODS:recordChangeDate>
+<MODS:recordIdentifier source="HOLLIS">004390909</MODS:recordIdentifier>
+</MODS:recordInfo>
+<location xmlns="http://www.loc.gov/mods/v3">
+<url usage="primary display" access="object in context">http://vc.lib.harvard.edu/vc/deliver/~crimes/004390909</url>
+</location>
+</MODS:mods>

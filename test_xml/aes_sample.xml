@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<audioObject xmlns="http://www.aes.org/audioObject" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.aes.org/audioObject http://www.aes.org/standards/schemas/aes57-2010-11-09.xsd" analogDigitalFlag="FILE_DIGITAL" disposition="huh?" schemaVersion="1.0" ID="ID1">
+	<format>AAC</format>
+	<use useType="ORIGINAL_MASTER"/>
+	<primaryIdentifier identifierType="FILE_NAME"/>
+	<face audioObjectRef="ID1" label="blah?" direction="A_PASS"  ID="ID2">
+		<timeline>
+			<startTime editRate="12500">2134</startTime>
+			<duration editRate="12500">2134</duration>
+		</timeline>
+		<region formatRef="ID1" faceRef="ID2" label="" ID="ID3">
+			<timeRange>
+				<startTime editRate="12500">2134</startTime>
+				<duration editRate="12500">2134</duration>
+			</timeRange>
+			<numChannels>2</numChannels>
+			<stream label="blah?" ID="ID4" faceRegionRef="ID1">
+				<channelAssignment leftRightPosition="1" frontRearPosition="0" channelNum="1"/>
+			</stream>
+		</region>
+	</face>
+       <formatList>
+          <formatRegion ID="FORMAT_REGION_1" ownerRef="ID1" label="TODO"  xsi:type="formatRegionType">
+             <bitDepth>16</bitDepth>
+             <sampleRate>11025.0</sampleRate>
+             <soundField>MONO</soundField>
+          </formatRegion>
+       </formatList>
+</audioObject>

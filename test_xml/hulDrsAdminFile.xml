@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hulDrsAdmin xmlns="http://hul.harvard.edu/ois/xml/ns/hulDrsAdmin" xmlns:fits="http://hul.harvard.edu/ois/xml/ns/fits/fits_output" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hul.harvard.edu/ois/xml/ns/hulDrsAdmin http://hul.harvard.edu/ois/xml/xsd/drs/hulDrsAdmin.xsd http://hul.harvard.edu/ois/xml/ns/fits/fits_output http://hul.harvard.edu/ois/xml/xsd/fits/fits_output.xsd">
+<drsFile>
+	<accessFlag  status="current" createDate="2006-05-04T18:13:51.0Z" creatingAgent="me">R</accessFlag>
+	<accessFlag  status="superseded" creatingAgent="me"   modDate="2006-05-04T18:13:51.0Z" createDate="2006-05-04T18:13:51.0Z">R</accessFlag>
+	<adminCategory>
+		<adminCategoryID>def</adminCategoryID>
+			<adminCategoryName>category</adminCategoryName>
+			<adminCategoryDescription>desc</adminCategoryDescription>		
+	</adminCategory>
+	<adminCategory>
+		<adminCategoryID>abc</adminCategoryID>
+	</adminCategory>
+	<adminFlag  status="current" createDate="2006-05-04T18:13:51.0Z">
+		<flagType>CORRUPTED</flagType>
+		<flagNote>I still don't know</flagNote>
+	</adminFlag>
+	<adminFlag status="deleted" creatingAgent="me"  modDate="2006-05-04T18:13:51.0Z" createDate="2006-05-04T18:13:51.0Z">		
+		<flagType>CORRUPTED</flagType>		
+		<flagNote>idk</flagNote>		
+	</adminFlag>
+	<adminFlag  status="current" createDate="2006-05-04T18:13:51.0Z">
+		<flagType>INCORRECT_METADATA</flagType>
+		<flagNote>idk</flagNote>
+	</adminFlag>
+	<fileIdentification status="SINGLE_RESULT">
+		<fits:identity  format="JPEG" mimetype="image/jpeg">
+			<fits:tool toolname="blah" toolversion="123"/>
+			<fits:tool toolname="blah2" toolversion="34"/>
+			<fits:version status="SINGLE_RESULT">4</fits:version>
+			<fits:version status="CONFLICT" toolversion="abc" toolname="bdd">blah</fits:version>
+			<fits:externalIdentifier toolname="blah" toolversion="blah2" type="puid">abc</fits:externalIdentifier>
+		</fits:identity>
+		<fits:identity format="jpeg2" mimetype="blah/blah">
+			<fits:tool toolname="something" toolversion="else"/>
+		</fits:identity>
+	</fileIdentification>
+	<formatValidation>
+	    <fits:well-formed toolname="Jhove" toolversion="1.5" status="SINGLE_RESULT">true</fits:well-formed>
+		<fits:valid toolname="Jhove" toolversion="1.5" status="SINGLE_RESULT">true</fits:valid>
+		<fits:message toolname="Jhove" toolversion="1.5" status="SINGLE_RESULT">file looks good to me</fits:message>
+	</formatValidation>
+	<insertionDate>2006-05-04T18:13:51.0Z</insertionDate>
+	<isFirstGenerationInDrs>yes</isFirstGenerationInDrs>
+	<isPreferredDeliverableSource>no</isPreferredDeliverableSource>
+	<latestModificationDate>2006-05-04T18:13:51.0Z</latestModificationDate>
+	<methodology>something</methodology>
+	<ownerSuppliedName>this name</ownerSuppliedName>
+	<processing>a</processing>
+	<processing>b</processing>
+	<quality>10</quality>
+	<role>ARCHIVAL_MASTER</role>
+	<role>DELIVERABLE</role>
+	<Status>current</Status>
+	<suppliedFilename>123.jpg</suppliedFilename>
+	<suppliedDirectory>masters/</suppliedDirectory>
+	<URI>
+		<uriType>PDS</uriType>
+		<uriValue>urn-3:abc:123</uriValue>
+	</URI>
+	<URI>
+		<uriType>PDS</uriType>
+		<uriValue>urn-3:abc:123</uriValue>
+	</URI>
+	<usageClass>HIGHUSE</usageClass>
+</drsFile>
+</hulDrsAdmin>

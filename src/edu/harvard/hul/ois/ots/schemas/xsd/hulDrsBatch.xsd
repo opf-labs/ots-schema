@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://hul.harvard.edu/ois/xml/ns/hulDrsBatch"
+    xmlns="http://hul.harvard.edu/ois/xml/ns/hulDrsBatch"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:SchemaLocation="http://hul.harvard.edu/ois/xml/ns/hulDrsBatch http://hul.harvard.edu/ois/xml/xsd/drs/hulDrsBatch.xsd"
+    version="0.1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <!-- 2010-09-22: Created (RKW) -->
+    <xs:element name="hulDrsBatch">
+        <xs:annotation>
+            <xs:documentation>This schema is intended to be used with the PREMIS ingest event in the eventOutcomeDetailExtension element.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="batchId"/>
+                <xs:element ref="batchName"/>
+                <xs:element ref="batchDirectoryName"/>
+                <xs:element ref="loadStartTime"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="batchName" type="xs:string"/>
+    <xs:element name="batchDirectoryName" type="xs:string"/>
+    <xs:element name="batchId" type="xs:string"/>
+    <xs:element name="loadStartTime" type="xs:dateTime"/>
+    </xs:schema>

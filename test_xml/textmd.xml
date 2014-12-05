@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<textMD xmlns="info:lc/xmlns/textMD-v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="info:lc/xmlns/textMD-v3 http://www.loc.gov/standards/textMD/textMD-v3.01a.xsd">
+
+<encoding QUALITY="blah">
+	<encoding_platform linebreak="CR">blah</encoding_platform>
+	<encoding_platform linebreak="CR">blah2</encoding_platform>
+	<encoding_software version="blah">blah</encoding_software>
+	<encoding_software version="blah">blah2</encoding_software>
+	<encoding_agent role="EDITOR">sdf</encoding_agent>
+	 <encoding_agent role="EDITOR">me</encoding_agent>
+</encoding>
+
+<character_info>
+	<charset>ANSI_X3.4-1968</charset>
+	
+	<byte_order>little</byte_order>
+	<byte_size>123</byte_size>
+
+	<character_size encoding="123">
+		asdf
+	</character_size>
+	<linebreak>CR/LF</linebreak>
+</character_info>
+
+<font_script>some font script</font_script>
+<pageOrder>right-to-left</pageOrder>
+<representationSequence>reading-order</representationSequence>
+
+<lineLayout>left-to-right</lineLayout>
+
+<characterFlow>boustrophedon start-on-left</characterFlow>
+<characterFlow>boustrophedon start-on-left</characterFlow>
+
+
+</textMD>
