@@ -1,6 +1,10 @@
 RELEASE NOTES
 -------------
 
+Version 0.12 (12/15/14)
+---------------------
+- Added VideoMD schema
+
 Version 0.11 (2/24/11)
 ---------------------
 - Added FAILED_METADATA_EXTRACTION admin flag to HulDrsAdmin schema
